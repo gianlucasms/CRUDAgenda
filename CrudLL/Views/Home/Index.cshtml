@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TabelaBd>
+@{
+    ViewData["Title"] = "Lista";
+}
+@if (Model.Any())
+{
+<h2>LISTA</h2>
+<table class="table-bordered table-striped" , style="width:100%">
+    <thead>
+        <tr style="width:100%">
+            <th scope="col" style="width:25%">Nome</th>
+            <th scope="col" style="width:10%">Idade</th>
+            <th scope="col" style="width:35%">Email</th>
+            <th scope="col" style="width:15%">Telefone</th>
+            <th scope="col" style="width:15%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>
+                    @x.Nome
+                </td>
+                <td>
+                    @x.Idade
+                </td>
+                <td>
+                    @x.Email
+                </td>
+                <td>
+                    @x.Telefone
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-primary" asp-route-id=@x.Id asp-action="Editar" asp-controller="Cadastro">Editar</a>
+                    <a class="btn btn-danger" asp-route-id=@x.Id asp-action="Apagar" asp-controller="Cadastro">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

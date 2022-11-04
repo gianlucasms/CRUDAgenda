@@ -1,0 +1,58 @@
+﻿@model TabelaBd
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout2";
+}
+
+<h1 class="text-center">Cadastro</h1>
+<hr />
+<form asp-action="Index" asp-controller="Cadastro" method="post">
+    <div class="card mx-auto" style="width: 40%;">
+        <div class="card-header">
+            Cadastro de Clientes
+        </div>
+
+        <div class="card-body" class="text-danger">
+            @*<div asp-validation-summary="All"></div>*@
+            <div>
+                <label>Nome</label><br />
+                <input asp-for="Nome" type="text" placeholder="Insira seu nome" class="input-group" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="mt-3">
+                <label>Idade</label><br />
+                <input asp-for="Idade" type="number" placeholder="Insira sua idade" class="input-group" />
+                <span asp-validation-for="Idade" class="text-danger"></span>
+            </div>
+
+            <div class="mt-3">
+                <label>Email</label><br />
+                <input asp-for="Email" type="email" placeholder="Insira seu email" class="input-group" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mt-3">
+                <label>Telefone</label><br />
+                <input asp-for=Telefone type="text" placeholder="Insira seu telefone" class="input-group" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" type="submit">Voltar</a>
+            </div>
+        </div>
+
+        <div class="card-footer">
+        </div>
+        <div>
+
+
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

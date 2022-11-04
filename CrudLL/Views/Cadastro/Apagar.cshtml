@@ -1,0 +1,22 @@
+﻿@model TabelaBd
+@{
+    ViewData["Title"] = "Apagar Cadastro";
+    Layout = "_Layout2";
+}
+
+<h1 class="text-center">Apagar Cadastro</h1>
+<hr />
+<form asp-action="Apagar" asp-controller="Cadastro" method="post">
+    <h2 class="text-center">Deseja apagar o contato  "@Model.Nome"</h2>
+    <div class="text-center mt-3">
+        <button class="btn btn-danger" type="submit">Apagar</button>
+        <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" type="submit">Voltar</a>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
